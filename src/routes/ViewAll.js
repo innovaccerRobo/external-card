@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { fetchAllLabTests } from "../api";
@@ -19,23 +19,26 @@ function ViewAll() {
       .finally(() => setIsLoading(false));
   };
 
-  const handleEvents = ({ data }) => {
-    switch (data.action) {
-      case "exitFullScreen":
-        console.log("I will exit full screen from view all");
-        navigate("/");
-        break;
-      default:
-        break;
-    }
-  };
+  const handleEvents = useCallback(
+    ({ data }) => {
+      switch (data.action) {
+        case "exitFullScreen":
+          console.log("I will exit full screen from view all");
+          navigate("/");
+          break;
+        default:
+          break;
+      }
+    },
+    [navigate]
+  );
 
   useEffect(() => {
     getData();
     window.addEventListener("message", handleEvents);
 
     return () => window.removeEventListener("message", handleEvents);
-  }, []);
+  }, [handleEvents]);
 
   return (
     <div className="px-5 vh-100 overflow-auto bg-light">

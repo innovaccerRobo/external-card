@@ -34,7 +34,7 @@ function Detail() {
   useEffect(() => {
     window.addEventListener("message", handleEvents);
     return () => window.removeEventListener("message", handleEvents);
-  }, []);
+  }, [handleEvents]);
 
   return (
     <Card className="mx-5 my-4 px-5 pb-5">

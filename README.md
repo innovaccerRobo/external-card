@@ -1,1 +1,1 @@
-[Deployed here](https://external-card-sample.netlify.app/)
+[Deployed here](https://external-card.netlify.app/)
