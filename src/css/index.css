@@ -17,6 +17,18 @@ code {
   border-bottom: 1px solid #e5e5e5;
 }
 
+.border-bottom:last-child {
+  border-bottom: none !important;
+}
+
 .text-align-end {
   text-align: end;
+}
+
+.flex-3 {
+  flex: 3;
+}
+
+.flex-2 {
+  flex: 2;
 }
