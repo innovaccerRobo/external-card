@@ -32,7 +32,7 @@ function Home() {
       {isLoading ? (
         <GhostLoader count={5} />
       ) : (
-        <LabTestList list={data.slice(0, 7)} />
+        <LabTestList list={data.slice(0, 12)} />
       )}
     </div>
   );
